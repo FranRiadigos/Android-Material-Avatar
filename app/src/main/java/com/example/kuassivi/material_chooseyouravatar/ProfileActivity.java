@@ -38,40 +38,42 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_profile);
 
         mFabSize = getResources().getDimensionPixelSize(R.dimen.fab_avatar_size);
         mSharedFab = ((ImageButton) findViewById(R.id.avatar));
         mSharedFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AvatarSelectionActivity.navigate(ProfileActivity.this, v, mAvatarUrl);
+                ChooseAvatarActivity.navigate(ProfileActivity.this, v, mAvatarUrl);
             }
         });
     }
 
     /**
      * Called before Reenter transition starts, so it gives some time to achieve goals
+     *
      * @param resultCode int
-     * @param data Intent
+     * @param data       Intent
      */
     @Override
     public void onActivityReenter(int resultCode, Intent data) {
-        if(resultCode == RESULT_OK){
+        if (resultCode == RESULT_OK) {
             updateAvatar(data);
         }
     }
 
     /**
      * Added for compatibility!
+     *
      * @param requestCode int
-     * @param resultCode int
-     * @param data Intent
+     * @param resultCode  int
+     * @param data        Intent
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_AVATAR_SELECTION_CODE) {
-            if(resultCode == RESULT_OK){
+            if (resultCode == RESULT_OK) {
                 updateAvatar(data);
             }
         }
@@ -83,6 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
      * <br>
      * <br>So finally I decided to do those stuffs after loading the same image from cache.
      * <br><b>TODO: This need to be performed!
+     *
      * @param data Intent
      */
     private void updateAvatar(Intent data) {

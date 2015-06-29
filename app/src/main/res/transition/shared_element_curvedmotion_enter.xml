@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
-               >
+    >
     <changeBounds>
         <arcMotion
             android:maximumAngle="90"
-            android:minimumVerticalAngle="90"
-            android:minimumHorizontalAngle="90" />
+            android:minimumHorizontalAngle="90"
+            android:minimumVerticalAngle="90"/>
     </changeBounds>
     <targets>
-        <target android:targetName="@string/transition_name" />
+        <target android:targetName="@string/transition_name"/>
     </targets>
 </transitionSet>

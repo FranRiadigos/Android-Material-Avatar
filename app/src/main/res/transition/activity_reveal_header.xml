@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
                android:transitionOrdering="together"
-               >
+    >
     <transitionSet android:startDelay="@integer/curve_motion_delay">
-        <transition class="com.example.kuassivi.material_chooseyouravatar.transition.RevealTransition"
-                    android:transitionVisibilityMode="mode_in" />
+        <transition
+            class="com.example.kuassivi.material_chooseyouravatar.transition.RevealTransition"
+            android:transitionVisibilityMode="mode_in"/>
         <targets>
-            <target android:targetId="@id/header_view" />
+            <target android:targetId="@id/header_view"/>
         </targets>
     </transitionSet>
     <!--<transitionSet>-->
-        <!--<fade kuassivi:fadingMode="fade_in" kuassivi:startDelay="@integer/recyclerview_transition_delay"/>-->
-        <!--<targets>-->
-            <!--<target kuassivi:excludeId="@id/header" />-->
-        <!--</targets>-->
+    <!--<fade kuassivi:fadingMode="fade_in" kuassivi:startDelay="@integer/recyclerview_transition_delay"/>-->
+    <!--<targets>-->
+    <!--<target kuassivi:excludeId="@id/header" />-->
+    <!--</targets>-->
     <!--</transitionSet>-->
 </transitionSet>

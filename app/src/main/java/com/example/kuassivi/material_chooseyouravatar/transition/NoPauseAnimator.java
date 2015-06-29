@@ -47,6 +47,11 @@ public class NoPauseAnimator extends Animator {
     }
 
     @Override
+    public void setInterpolator(TimeInterpolator timeInterpolator) {
+        mAnimator.setInterpolator(timeInterpolator);
+    }
+
+    @Override
     public ArrayList<AnimatorListener> getListeners() {
         return new ArrayList<>(mListeners.keySet());
     }
@@ -54,6 +59,11 @@ public class NoPauseAnimator extends Animator {
     @Override
     public long getStartDelay() {
         return mAnimator.getStartDelay();
+    }
+
+    @Override
+    public void setStartDelay(long delayMS) {
+        mAnimator.setStartDelay(delayMS);
     }
 
     @Override
@@ -71,6 +81,17 @@ public class NoPauseAnimator extends Animator {
         return mAnimator.isStarted();
     }
 
+    /* We don't want to override pause or resume methods because we don't want them
+     * to affect mAnimator.
+    public void pause();
+
+    public void resume();
+
+    public void addPauseListener(AnimatorPauseListener listener);
+
+    public void removePauseListener(AnimatorPauseListener listener);
+    */
+
     @Override
     public void removeAllListeners() {
         mListeners.clear();
@@ -86,31 +107,10 @@ public class NoPauseAnimator extends Animator {
         }
     }
 
-    /* We don't want to override pause or resume methods because we don't want them
-     * to affect mAnimator.
-    public void pause();
-
-    public void resume();
-
-    public void addPauseListener(AnimatorPauseListener listener);
-
-    public void removePauseListener(AnimatorPauseListener listener);
-    */
-
     @Override
     public Animator setDuration(long durationMS) {
         mAnimator.setDuration(durationMS);
         return this;
-    }
-
-    @Override
-    public void setInterpolator(TimeInterpolator timeInterpolator) {
-        mAnimator.setInterpolator(timeInterpolator);
-    }
-
-    @Override
-    public void setStartDelay(long delayMS) {
-        mAnimator.setStartDelay(delayMS);
     }
 
     @Override

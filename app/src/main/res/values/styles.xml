@@ -7,8 +7,12 @@
         <item name="colorControlHighlight">@color/accent_translucent</item> 
         <item name="android:colorControlHighlight">@color/accent_translucent</item> 
         <item name="colorAccent">@color/accent</item>
-        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_curvedmotion_enter</item>
-        <item name="android:windowSharedElementReturnTransition">@transition/shared_element_curvedmotion_return</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/shared_element_curvedmotion_enter
+        </item>
+        <item name="android:windowSharedElementReturnTransition">
+            @transition/shared_element_curvedmotion_return
+        </item>
         <item name="android:windowEnterTransition">@transition/activity_reveal_header</item>
         <item name="android:windowReturnTransition">@transition/activity_return_avatar</item>
     </style>

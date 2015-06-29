@@ -54,7 +54,7 @@ public class GalleryView extends ImageView {
     }
 
     public GalleryView setImageBitmap(Bitmap bm, boolean withFade) {
-        if(!withFade)
+        if (!withFade)
             super.setImageBitmap(bm);
         else {
             FadeDrawable drawable = new FadeDrawable(getContext(), bm);
@@ -71,8 +71,7 @@ public class GalleryView extends ImageView {
 
     public void startBitmapAnimation() {
         final List<Animator> animatorList = new ArrayList<>();
-        for(InterfaceBitmapAnimator bitmapAnimator : mAnimators)
-        {
+        for (InterfaceBitmapAnimator bitmapAnimator : mAnimators) {
             Animator animator = bitmapAnimator.getAnimator(GalleryView.this);
             if (animator != null)
                 animatorList.add(animator);
@@ -80,7 +79,7 @@ public class GalleryView extends ImageView {
         post(new Runnable() {
             @Override
             public void run() {
-                for(Animator animator : animatorList)
+                for (Animator animator : animatorList)
                     animator.start();
             }
         });

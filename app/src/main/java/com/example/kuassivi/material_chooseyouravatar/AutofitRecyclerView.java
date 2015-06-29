@@ -43,7 +43,7 @@ public class AutofitRecyclerView extends RecyclerView {
     private void init(Context context, AttributeSet attrs) {
         if (attrs != null) {
             int[] attrsArray = {
-                    android.R.attr.columnWidth
+                android.R.attr.columnWidth
             };
             TypedArray array = context.obtainStyledAttributes(attrs, attrsArray);
             columnWidth = array.getDimensionPixelSize(0, -1);

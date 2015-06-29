@@ -44,8 +44,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AvatarSelectionActivity extends AppCompatActivity
-        implements RecyclerViewAdapter.OnItemClickListener {
+public class ChooseAvatarActivity extends AppCompatActivity
+    implements RecyclerViewAdapter.OnItemClickListener {
 
     public static final String EXTRA_AVATAR = BuildConfig.APPLICATION_ID + ".EXTRA_AVATAR";
 
@@ -65,12 +65,12 @@ public class AvatarSelectionActivity extends AppCompatActivity
     private String imageUrl;
 
     public static void navigate(Activity context, View transitionView, String avatar) {
-        Intent intent = new Intent(context, AvatarSelectionActivity.class);
+        Intent intent = new Intent(context, ChooseAvatarActivity.class);
         intent.putExtra(EXTRA_AVATAR, avatar);
 
         ActivityOptionsCompat optionsCompat =
-                ActivityOptionsCompat.makeSceneTransitionAnimation(context, transitionView,
-                        context.getString(R.string.transition_name));
+            ActivityOptionsCompat.makeSceneTransitionAnimation(context, transitionView,
+                context.getString(R.string.transition_name));
         ActivityCompat.startActivityForResult(context, intent,
             ProfileActivity.REQUEST_AVATAR_SELECTION_CODE, optionsCompat.toBundle());
     }
@@ -80,7 +80,7 @@ public class AvatarSelectionActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         postponeEnterTransition();
         initTransitions();
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_choose_avatar);
         checkExtras();
         loadResources();
         setViews();
@@ -90,7 +90,7 @@ public class AvatarSelectionActivity extends AppCompatActivity
 
     private void checkExtras() {
         Bundle extras = getIntent().getExtras();
-        if(extras != null) {
+        if (extras != null) {
             imageUrl = extras.getString(EXTRA_AVATAR);
         }
     }
@@ -117,7 +117,7 @@ public class AvatarSelectionActivity extends AppCompatActivity
     }
 
     private void updateAvatarAndStartTransition() {
-        if(imageUrl != null)
+        if (imageUrl != null)
             Picasso.with(this)
                 .load(imageUrl)
                 .into(new TargetAdapter() {
@@ -135,7 +135,8 @@ public class AvatarSelectionActivity extends AppCompatActivity
         else startPostponedEnterTransition();
     }
 
-    @Override public void onItemClick(View view, final ViewModel viewModel) {
+    @Override
+    public void onItemClick(View view, final ViewModel viewModel) {
         imageUrl = viewModel.getImage();
 
         Picasso.with(this).load(viewModel.getImage()).into(
@@ -168,51 +169,51 @@ public class AvatarSelectionActivity extends AppCompatActivity
     private void initTransitions() {
 
         getWindow().getSharedElementEnterTransition()
-        .addListener(new TransitionListenerAdapter() {
-            @Override
-            public void onTransitionStart(Transition transition) {
-                mHeaderView.setVisibility(View.INVISIBLE);
-            }
-
-            @Override
-            public void onTransitionEnd(Transition transition) {
-                mHeaderView.setVisibility(View.VISIBLE);
-                mSharedAvatarView.setAlpha(0f);
-            }
-        });
-
-        getWindow().getReturnTransition()
-        .addListener(new TransitionListenerAdapter() {
-            @Override
-            public void onTransitionStart(Transition transition) {
-
-                final long duration = getResources().getInteger(R.integer.duration_fast);
-
-                if(imageUrl != null) {
-                    int dWidth = mAvatarContainer.getDrawableWidth(),
-                        dHeight = mAvatarContainer.getDrawableHeight(),
-                        vWidth = mAvatarContainer.getInsetWidth(),
-                        vHeight = mAvatarContainer.getInsetHeight();
-
-                    float scaleTo = (float) fabSize / (float) vHeight;
-                    long delay = Float.valueOf((float)duration /
-                        (((float)vWidth / (float)vHeight) + ((float)dWidth / (float)dHeight))).longValue();
-
-                    ScalableBitmapAnimator bitmapAnimator =
-                        new ScalableBitmapAnimator(scaleTo, ScalableBitmapAnimator.SCALE_TO);
-                    bitmapAnimator.setScaleFactor(1f).setInterpolator(new DecelerateInterpolator())
-                        .setDuration(duration).setStartDelay(delay);
-                    mAvatarContainer.setBitmapAnimators(bitmapAnimator).startBitmapAnimation();
+            .addListener(new TransitionListenerAdapter() {
+                @Override
+                public void onTransitionStart(Transition transition) {
+                    mHeaderView.setVisibility(View.INVISIBLE);
                 }
 
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mSharedAvatarView.setAlpha(1f);
+                @Override
+                public void onTransitionEnd(Transition transition) {
+                    mHeaderView.setVisibility(View.VISIBLE);
+                    mSharedAvatarView.setAlpha(0f);
+                }
+            });
+
+        getWindow().getReturnTransition()
+            .addListener(new TransitionListenerAdapter() {
+                @Override
+                public void onTransitionStart(Transition transition) {
+
+                    final long duration = getResources().getInteger(R.integer.duration_fast);
+
+                    if (imageUrl != null) {
+                        int dWidth = mAvatarContainer.getDrawableWidth(),
+                            dHeight = mAvatarContainer.getDrawableHeight(),
+                            vWidth = mAvatarContainer.getInsetWidth(),
+                            vHeight = mAvatarContainer.getInsetHeight();
+
+                        float scaleTo = (float) fabSize / (float) vHeight;
+                        long delay = Float.valueOf((float) duration /
+                            (((float) vWidth / (float) vHeight) + ((float) dWidth / (float) dHeight))).longValue();
+
+                        ScalableBitmapAnimator bitmapAnimator =
+                            new ScalableBitmapAnimator(scaleTo, ScalableBitmapAnimator.SCALE_TO);
+                        bitmapAnimator.setScaleFactor(1f).setInterpolator(new DecelerateInterpolator())
+                            .setDuration(duration).setStartDelay(delay);
+                        mAvatarContainer.setBitmapAnimators(bitmapAnimator).startBitmapAnimation();
                     }
-                }, duration);
-            }
-        });
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mSharedAvatarView.setAlpha(1f);
+                        }
+                    }, duration);
+                }
+            });
     }
 
     @Override

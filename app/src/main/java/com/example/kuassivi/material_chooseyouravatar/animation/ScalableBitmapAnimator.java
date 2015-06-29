@@ -28,17 +28,11 @@ import java.lang.annotation.RetentionPolicy;
 
 public class ScalableBitmapAnimator extends AbstractBitmapAnimator {
     public static final float DEFAULT_SCALE_FACTOR = 1.5f;
-
-    @IntDef({SCALE_FROM, SCALE_TO})
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface ScaleSource {}
-
-    public static final int SCALE_FROM  = 0x01;
-    public static final int SCALE_TO    = 0x02;
-
-    private float   mSourceScale = 0f;
-    private float   mCurrentScale;
-    private int     mDirection;
+    public static final int SCALE_FROM = 0x01;
+    public static final int SCALE_TO = 0x02;
+    private float mSourceScale = 0f;
+    private float mCurrentScale;
+    private int mDirection;
 
     public ScalableBitmapAnimator(@ScaleSource int direction) {
         mDirection = direction;
@@ -53,7 +47,7 @@ public class ScalableBitmapAnimator extends AbstractBitmapAnimator {
     public Animator getAnimator(final GalleryView view) {
         configureBounds(view);
         ValueAnimator animator = configureAnimator();
-        if(animator != null) {
+        if (animator != null) {
             animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -81,12 +75,13 @@ public class ScalableBitmapAnimator extends AbstractBitmapAnimator {
 
     /**
      * Switch between scale sources to animate
+     *
      * @return ValueAnimator
      */
     private ValueAnimator configureAnimator() {
         ValueAnimator currentAnimator = null;
         float scale = mCurrentScale * getScaleFactor();
-        if(mSourceScale > 0)
+        if (mSourceScale > 0)
             scale = mSourceScale;
         switch (mDirection) {
             case SCALE_FROM:
@@ -101,6 +96,7 @@ public class ScalableBitmapAnimator extends AbstractBitmapAnimator {
 
     /**
      * It sets and configures the bounds of the loaded bitmap and map the drawable to fit the scale
+     *
      * @param view GalleryView
      */
     private void configureBounds(GalleryView view) {
@@ -119,8 +115,8 @@ public class ScalableBitmapAnimator extends AbstractBitmapAnimator {
         } else {
             mCurrentScale = (float) vWidth / (float) dWidth;
         }
-        dx = - ((dWidth * mCurrentScale * getScaleFactor()) - vWidth) * 0.5f;
-        dy = - ((dHeight * mCurrentScale * getScaleFactor()) - vHeight) * 0.5f;
+        dx = -((dWidth * mCurrentScale * getScaleFactor()) - vWidth) * 0.5f;
+        dy = -((dHeight * mCurrentScale * getScaleFactor()) - vHeight) * 0.5f;
         matrix.setScale(mCurrentScale * getScaleFactor(), mCurrentScale * getScaleFactor());
         matrix.postTranslate((int) (dx + 0.5f), (int) (dy + 0.5f));
         view.setImageMatrix(matrix);
@@ -128,8 +124,13 @@ public class ScalableBitmapAnimator extends AbstractBitmapAnimator {
 
     @Override
     public Float getScaleFactor() {
-        if(super.getScaleFactor() == null)
+        if (super.getScaleFactor() == null)
             return DEFAULT_SCALE_FACTOR;
         return super.getScaleFactor();
+    }
+
+    @IntDef({SCALE_FROM, SCALE_TO})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface ScaleSource {
     }
 }

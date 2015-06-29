@@ -73,16 +73,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             }
         });
-        if(position > mLastPosition) {
-            if(position % 2 == 0)
+        if (position > mLastPosition) {
+            if (position % 2 == 0)
                 animationDelay = position * DEFAULT_DELAY;
 
             ViewCompat.setTranslationY(holder.itemView, MIN_TRANSLATION_Y);
             ViewCompat.setAlpha(holder.itemView, 0);
             ViewCompat.animate(holder.itemView)
-                    .translationY(0)
-                    .alpha(1)
-                    .setStartDelay(animationDelay);
+                .translationY(0)
+                .alpha(1)
+                .setStartDelay(animationDelay);
 
             mLastPosition = position;
         }
@@ -93,6 +93,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return items.size();
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(View view, ViewModel viewModel);
+    }
+
     protected static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
 
@@ -100,9 +104,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.image);
         }
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(View view, ViewModel viewModel);
     }
 }

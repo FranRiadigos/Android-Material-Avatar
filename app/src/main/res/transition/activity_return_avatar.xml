@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
-               android:transitionOrdering="together"
-               android:duration="@integer/duration_fast">
+               android:duration="@integer/duration_fast"
+               android:transitionOrdering="together">
     <transitionSet>
-        <transition class="com.example.kuassivi.material_chooseyouravatar.transition.RevealTransition"
-                    android:transitionVisibilityMode="mode_out" />
+        <transition
+            class="com.example.kuassivi.material_chooseyouravatar.transition.RevealTransition"
+            android:transitionVisibilityMode="mode_out"/>
         <targets>
-            <target android:targetId="@id/header_view" />
+            <target android:targetId="@id/header_view"/>
         </targets>
     </transitionSet>
-    <transitionSet android:interpolator="@android:interpolator/anticipate_overshoot"
-                   android:duration="@integer/curve_motion_delay">
+    <transitionSet
+        android:duration="@integer/curve_motion_delay"
+        android:interpolator="@android:interpolator/anticipate_overshoot">
         <fade android:fadingMode="fade_out"/>
         <targets>
             <target android:excludeId="@id/header_view"/>
-            <target android:excludeId="@android:id/statusBarBackground" />
+            <target android:excludeId="@android:id/statusBarBackground"/>
         </targets>
     </transitionSet>
 </transitionSet>

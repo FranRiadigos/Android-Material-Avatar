@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FirstActivity"
-        android:weightSum="1"
+        android:clipChildren="false"
         android:orientation="vertical"
-        android:clipChildren="false">
+        android:weightSum="1"
+        tools:context=".FirstActivity">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -68,22 +69,22 @@
     </LinearLayout>
 
     <!--<kuassivi.support.design.widget.FloatingActionButton-->
-        <!--kuassivi:id="@+id/avatar"-->
-        <!--kuassivi:transitionName="@string/transition_name"-->
-        <!--kuassivi:layout_height="@dimen/fab_avatar_size"-->
-        <!--kuassivi:layout_width="@dimen/fab_avatar_size"-->
-        <!--app:layout_anchor="@id/content"-->
-        <!--app:layout_anchorGravity="top|left|start"-->
-        <!--app:fabSize="normal"-->
-        <!--kuassivi:layout_margin="@dimen/default_padding_margin"-->
-        <!--kuassivi:clickable="true"/>-->
+    <!--kuassivi:id="@+id/avatar"-->
+    <!--kuassivi:transitionName="@string/transition_name"-->
+    <!--kuassivi:layout_height="@dimen/fab_avatar_size"-->
+    <!--kuassivi:layout_width="@dimen/fab_avatar_size"-->
+    <!--app:layout_anchor="@id/content"-->
+    <!--app:layout_anchorGravity="top|left|start"-->
+    <!--app:fabSize="normal"-->
+    <!--kuassivi:layout_margin="@dimen/default_padding_margin"-->
+    <!--kuassivi:clickable="true"/>-->
 
     <ImageButton
         android:id="@+id/avatar"
         style="@style/AvatarStyle"
-        android:transitionName="@string/transition_name"
         android:layout_margin="@dimen/default_padding_margin"
-        app:layout_anchorGravity="top|left|start"
-        app:layout_anchor="@id/content"/>
+        android:transitionName="@string/transition_name"
+        app:layout_anchor="@id/content"
+        app:layout_anchorGravity="top|left|start"/>
 
 </android.support.design.widget.CoordinatorLayout>

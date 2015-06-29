@@ -23,9 +23,14 @@ import com.squareup.picasso.Target;
 
 public class TargetAdapter implements Target {
     @Override
-    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {}
+    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+    }
+
     @Override
-    public void onBitmapFailed(Drawable errorDrawable) {}
+    public void onBitmapFailed(Drawable errorDrawable) {
+    }
+
     @Override
-    public void onPrepareLoad(Drawable placeHolderDrawable) {}
+    public void onPrepareLoad(Drawable placeHolderDrawable) {
+    }
 }
