@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity"
+    android:weightSum="1"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/header_view"
+        android:layout_width="@dimen/default_0"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:background="@color/accent">
+
+        <ImageButton
+            android:id="@+id/shared_avatar_view"
+            style="@style/AvatarStyle"
+            android:layout_height="@dimen/fab_avatar_size_expanded"
+            android:layout_width="@dimen/fab_avatar_size_expanded"
+            android:transitionName="@string/transition_name"
+            android:layout_margin="@dimen/default_padding_margin"
+            android:layout_gravity="center" />
+
+        <com.example.kuassivi.material_chooseyouravatar.GalleryView
+            android:id="@+id/avatar_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+
+    <com.example.kuassivi.material_chooseyouravatar.AutofitRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="@dimen/default_0"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:padding="@dimen/default_padding_margin"
+        android:columnWidth="@dimen/grid_column_width"
+        android:clipToPadding="false"/>
+
+</LinearLayout>

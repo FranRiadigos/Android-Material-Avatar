@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item> 
+        <item name="colorPrimaryDark">@color/primary_dark</item> 
+        <item name="colorControlHighlight">@color/accent_translucent</item> 
+        <item name="android:colorControlHighlight">@color/accent_translucent</item> 
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_curvedmotion_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/shared_element_curvedmotion_return</item>
+        <item name="android:windowEnterTransition">@transition/activity_reveal_header</item>
+        <item name="android:windowReturnTransition">@transition/activity_return_avatar</item>
+    </style>
+
+    <style name="AvatarStyle">
+        <item name="android:layout_width">@dimen/fab_avatar_size</item>
+        <item name="android:layout_height">@dimen/fab_avatar_size</item>
+        <item name="android:background">@drawable/avatar_background</item>
+        <item name="android:outlineProvider">background</item>
+    </style>
+
+    <color name="primary">#00BCD4</color>
+    <color name="primary_dark">#0097A7</color>
+    <color name="accent">#ffc61e36</color>
+    <color name="accent_translucent">#80ff1e39</color>
+    <color name="accent_bright">#ffff2645</color>
+
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="curve_motion_delay">150</integer>
+    <integer name="reveal_motion_delay">150</integer>
+    <integer name="transition_delay">300</integer>
+    <integer name="duration_fast">300</integer>
+    <integer name="bitmap_motion">1000</integer>
+</resources>

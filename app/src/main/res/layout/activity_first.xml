@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FirstActivity"
+        android:weightSum="1"
+        android:orientation="vertical"
+        android:clipChildren="false">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:background="@color/primary"/>
+
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:clipChildren="false">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/default_padding_margin"
+                android:paddingTop="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Lorem ipsum, dolor sit admen...."/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Lorem ipsum, dolor sit admen...."/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Lorem ipsum, dolor sit admen...."/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Lorem ipsum, dolor sit admen...."/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!--<kuassivi.support.design.widget.FloatingActionButton-->
+        <!--kuassivi:id="@+id/avatar"-->
+        <!--kuassivi:transitionName="@string/transition_name"-->
+        <!--kuassivi:layout_height="@dimen/fab_avatar_size"-->
+        <!--kuassivi:layout_width="@dimen/fab_avatar_size"-->
+        <!--app:layout_anchor="@id/content"-->
+        <!--app:layout_anchorGravity="top|left|start"-->
+        <!--app:fabSize="normal"-->
+        <!--kuassivi:layout_margin="@dimen/default_padding_margin"-->
+        <!--kuassivi:clickable="true"/>-->
+
+    <ImageButton
+        android:id="@+id/avatar"
+        style="@style/AvatarStyle"
+        android:transitionName="@string/transition_name"
+        android:layout_margin="@dimen/default_padding_margin"
+        app:layout_anchorGravity="top|left|start"
+        app:layout_anchor="@id/content"/>
+
+</android.support.design.widget.CoordinatorLayout>
