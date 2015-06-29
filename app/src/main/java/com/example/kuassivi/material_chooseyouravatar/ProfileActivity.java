@@ -83,7 +83,7 @@ public class ProfileActivity extends AppCompatActivity {
      * The resize method of Picasso creates a new Request if there is no such resized file cached before.
      * <br>The transform method of Picasso doesn't work properly with a Target destination.
      * <br>
-     * <br>So finally I decided to do those stuffs after loading the same image from cache.
+     * <br>So I finally decided to do those stuffs after loading the same image from cache.
      * <br><b>TODO: This need to be performed!
      *
      * @param data Intent
