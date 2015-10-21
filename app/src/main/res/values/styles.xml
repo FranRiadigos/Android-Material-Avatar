@@ -1,27 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item> 
         <item name="colorPrimaryDark">@color/primary_dark</item> 
         <item name="colorControlHighlight">@color/accent_translucent</item> 
-        <item name="android:colorControlHighlight">@color/accent_translucent</item> 
         <item name="colorAccent">@color/accent</item>
-        <item name="android:windowSharedElementEnterTransition">
-            @transition/shared_element_curvedmotion_enter
-        </item>
-        <item name="android:windowSharedElementReturnTransition">
-            @transition/shared_element_curvedmotion_return
-        </item>
-        <item name="android:windowEnterTransition">@transition/activity_reveal_header</item>
-        <item name="android:windowReturnTransition">@transition/activity_return_avatar</item>
     </style>
 
-    <style name="AvatarStyle">
+    <style name="AppTheme" parent="BaseTheme"/>
+
+    <style name="CircleShapeStyle">
         <item name="android:layout_width">@dimen/fab_avatar_size</item>
         <item name="android:layout_height">@dimen/fab_avatar_size</item>
         <item name="android:background">@drawable/avatar_background</item>
-        <item name="android:outlineProvider">background</item>
+    </style>
+
+    <style name="AvatarStyle" parent="CircleShapeStyle"/>
+
+    <style name="FabStyle" parent="CircleShapeStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/fab_compat_margin</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:src">@mipmap/ic_check_white_24dp</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">6dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+        <item name="rippleColor">@android:color/white</item>
     </style>
 
     <color name="primary">#00BCD4</color>

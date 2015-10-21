@@ -15,14 +15,18 @@
  */
 package com.example.kuassivi.material_chooseyouravatar;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Transition;
@@ -45,7 +49,8 @@ import java.util.List;
 
 
 public class ChooseAvatarActivity extends AppCompatActivity
-    implements RecyclerViewAdapter.OnItemClickListener {
+    implements RecyclerViewAdapter.OnItemClickListener,
+    View.OnClickListener{
 
     public static final String EXTRA_AVATAR = BuildConfig.APPLICATION_ID + ".EXTRA_AVATAR";
 
@@ -60,6 +65,7 @@ public class ChooseAvatarActivity extends AppCompatActivity
     private ImageButton mSharedAvatarView;
     private FrameLayout mHeaderView;
     private GalleryView mAvatarContainer;
+    private FloatingActionButton mFab;
 
     private int fabSize;
     private String imageUrl;
@@ -78,7 +84,6 @@ public class ChooseAvatarActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        postponeEnterTransition();
         initTransitions();
         setContentView(R.layout.activity_choose_avatar);
         checkExtras();
@@ -103,6 +108,9 @@ public class ChooseAvatarActivity extends AppCompatActivity
         mSharedAvatarView = (ImageButton) findViewById(R.id.shared_avatar_view);
         mHeaderView = (FrameLayout) findViewById(R.id.header_view);
         mAvatarContainer = (GalleryView) mHeaderView.findViewById(R.id.avatar_container);
+        mFab = (FloatingActionButton) findViewById(R.id.fab);
+        mFab.setVisibility(View.GONE);
+        mFab.setOnClickListener(this);
     }
 
     private void startAdapter() {
@@ -157,6 +165,22 @@ public class ChooseAvatarActivity extends AppCompatActivity
 
                 }
             });
+
+        showFab();
+    }
+
+    private void showFab() {
+        if(mFab.getVisibility() == View.GONE) {
+            ViewCompat.setAlpha(mFab, 0);
+            mFab.setVisibility(View.VISIBLE);
+            mFab.post(new Runnable() {
+                @Override
+                public void run() {
+                    ViewCompat.setTranslationX(mFab, mFab.getMeasuredWidth());
+                    ViewCompat.animate(mFab).translationX(0).alpha(1).start();
+                }
+            });
+        }
     }
 
     private void updateSharedAvatarView(Bitmap bitmap) {
@@ -166,7 +190,9 @@ public class ChooseAvatarActivity extends AppCompatActivity
             circleTransform.transform(scaledBitmap)));
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void initTransitions() {
+        postponeEnterTransition();
 
         getWindow().getSharedElementEnterTransition()
             .addListener(new TransitionListenerAdapter() {
@@ -217,10 +243,15 @@ public class ChooseAvatarActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
-        Intent returnIntent = new Intent();
-        returnIntent.putExtra("imageUrl", imageUrl);
-        setResult(RESULT_OK, returnIntent);
-        super.onBackPressed();
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab:
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("imageUrl", imageUrl);
+                setResult(RESULT_OK, returnIntent);
+                supportFinishAfterTransition();
+                ViewCompat.animate(v).translationX(v.getMeasuredWidth()).start();
+                break;
+        }
     }
 }

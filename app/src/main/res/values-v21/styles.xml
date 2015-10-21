@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="BaseTheme">
+        <item name="android:colorControlHighlight">@color/accent_translucent</item> 
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/shared_element_curvedmotion_enter
+        </item>
+        <item name="android:windowSharedElementReturnTransition">
+            @transition/shared_element_curvedmotion_return
+        </item>
+        <item name="android:windowEnterTransition">@transition/activity_reveal_header</item>
+        <item name="android:windowReturnTransition">@transition/activity_return_avatar</item>
+    </style>
+
+    <style name="AvatarStyle" parent="CircleShapeStyle">
+        <item name="android:outlineProvider">background</item>
+    </style>
+
+</resources>
