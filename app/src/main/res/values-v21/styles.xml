@@ -4,10 +4,10 @@
     <style name="AppTheme" parent="BaseTheme">
         <item name="android:colorControlHighlight">@color/accent_translucent</item> 
         <item name="android:windowSharedElementEnterTransition">
-            @transition/shared_element_curvedmotion_enter
+            @transition/shared_element_curvemotion_enter
         </item>
         <item name="android:windowSharedElementReturnTransition">
-            @transition/shared_element_curvedmotion_return
+            @transition/shared_element_curvemotion_return
         </item>
         <item name="android:windowEnterTransition">@transition/activity_reveal_header</item>
         <item name="android:windowReturnTransition">@transition/activity_return_avatar</item>

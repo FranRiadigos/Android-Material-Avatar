@@ -12,8 +12,8 @@
     <style name="AppTheme" parent="BaseTheme"/>
 
     <style name="CircleShapeStyle">
-        <item name="android:layout_width">@dimen/fab_avatar_size</item>
-        <item name="android:layout_height">@dimen/fab_avatar_size</item>
+        <item name="android:layout_width">@dimen/avatar_size</item>
+        <item name="android:layout_height">@dimen/avatar_size</item>
         <item name="android:background">@drawable/avatar_background</item>
     </style>
 

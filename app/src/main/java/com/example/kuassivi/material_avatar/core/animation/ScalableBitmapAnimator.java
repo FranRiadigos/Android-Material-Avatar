@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Kiko Gonzalez
+ * Copyright (C) 2015 Francisco Gonzalez-Armijo Riádigos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.kuassivi.material_chooseyouravatar.animation;
+package com.example.kuassivi.material_avatar.core.animation;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -21,7 +21,7 @@ import android.graphics.Matrix;
 import android.support.annotation.IntDef;
 import android.widget.ImageView;
 
-import com.example.kuassivi.material_chooseyouravatar.GalleryView;
+import com.example.kuassivi.material_avatar.core.view.GalleryView;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

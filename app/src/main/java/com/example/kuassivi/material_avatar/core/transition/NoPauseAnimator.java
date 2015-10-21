@@ -1,14 +1,17 @@
-package com.example.kuassivi.material_chooseyouravatar.transition;
+package com.example.kuassivi.material_avatar.core.transition;
 
 import android.animation.Animator;
 import android.animation.TimeInterpolator;
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.util.ArrayMap;
 
 import java.util.ArrayList;
 
 /**
- * {@see <a href="https://halfthought.wordpress.com/2014/11/07/reveal-transition/">eveal-transition</a>}
+ * {@see <a href="https://halfthought.wordpress.com/2014/11/07/reveal-transition/">reveal-transition</a>}
  */
+@TargetApi(Build.VERSION_CODES.KITKAT)
 public class NoPauseAnimator extends Animator {
     private final Animator mAnimator;
     private final ArrayMap<AnimatorListener, AnimatorListener> mListeners = new ArrayMap<>();

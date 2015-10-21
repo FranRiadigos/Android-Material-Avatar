@@ -4,7 +4,7 @@
     >
     <transitionSet android:startDelay="@integer/curve_motion_delay">
         <transition
-            class="com.example.kuassivi.material_chooseyouravatar.transition.RevealTransition"
+            class="com.example.kuassivi.material_avatar.core.transition.RevealTransition"
             android:transitionVisibilityMode="mode_in"/>
         <targets>
             <target android:targetId="@id/header_view"/>

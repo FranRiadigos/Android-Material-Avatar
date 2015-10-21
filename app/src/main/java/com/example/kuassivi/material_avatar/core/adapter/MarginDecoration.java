@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Kiko Gonzalez
+ * Copyright (C) 2015 Francisco Gonzalez-Armijo Riádigos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.kuassivi.material_chooseyouravatar.adapter;
+package com.example.kuassivi.material_avatar.core.adapter;
 
 import android.content.Context;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.kuassivi.material_chooseyouravatar.R;
+import com.example.kuassivi.material_avatar.R;
 
 public class MarginDecoration extends RecyclerView.ItemDecoration {
     private int margin;

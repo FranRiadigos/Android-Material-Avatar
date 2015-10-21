@@ -4,7 +4,7 @@
                android:transitionOrdering="together">
     <transitionSet>
         <transition
-            class="com.example.kuassivi.material_chooseyouravatar.transition.RevealTransition"
+            class="com.example.kuassivi.material_avatar.core.transition.RevealTransition"
             android:transitionVisibilityMode="mode_out"/>
         <targets>
             <target android:targetId="@id/header_view"/>

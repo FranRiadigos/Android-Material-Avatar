@@ -5,8 +5,8 @@
 
     <dimen name="default_0">0dp</dimen>
 
-    <dimen name="fab_avatar_size">64dp</dimen>
-    <dimen name="fab_avatar_size_expanded">110dp</dimen>
+    <dimen name="avatar_size">64dp</dimen>
+    <dimen name="avatar_size_expanded">110dp</dimen>
     <dimen name="default_padding_margin">16dp</dimen>
     <dimen name="default_grid_margin">8dp</dimen>
     <dimen name="fab_compat_margin">0dp</dimen>
@@ -14,5 +14,5 @@
     <dimen name="elevation_low">3dp</dimen>
     <dimen name="elevation_high">12dp</dimen>
 
-    <dimen name="grid_column_width">150dp</dimen>
+    <dimen name="grid_column_width">100dp</dimen>
 </resources>

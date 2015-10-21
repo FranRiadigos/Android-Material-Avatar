@@ -1,4 +1,4 @@
-package com.example.kuassivi.material_chooseyouravatar.animation;
+package com.example.kuassivi.material_avatar.core.animation;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

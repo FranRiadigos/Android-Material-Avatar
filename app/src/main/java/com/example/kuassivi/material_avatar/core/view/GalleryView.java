@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Kiko Gonzalez
+ * Copyright (C) 2015 Francisco Gonzalez-Armijo Riádigos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.kuassivi.material_chooseyouravatar;
+package com.example.kuassivi.material_avatar.core.view;
 
 import android.animation.Animator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.example.kuassivi.material_chooseyouravatar.animation.FadeDrawable;
-import com.example.kuassivi.material_chooseyouravatar.animation.InterfaceBitmapAnimator;
+import com.example.kuassivi.material_avatar.core.animation.FadeDrawable;
+import com.example.kuassivi.material_avatar.core.animation.InterfaceBitmapAnimator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +46,7 @@ public class GalleryView extends ImageView {
         super(context, attrs, defStyleAttr);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public GalleryView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }

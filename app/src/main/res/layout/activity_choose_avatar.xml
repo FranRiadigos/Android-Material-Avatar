@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".ChooseAvatarActivity">
+
+    <!-- Layout container -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="1">
 
+        <!-- Our header -->
         <FrameLayout
             android:id="@+id/header_view"
             android:layout_width="match_parent"
@@ -22,20 +25,22 @@
             <ImageButton
                 android:id="@+id/shared_avatar_view"
                 style="@style/AvatarStyle"
-                android:layout_width="@dimen/fab_avatar_size_expanded"
-                android:layout_height="@dimen/fab_avatar_size_expanded"
+                android:layout_width="@dimen/avatar_size_expanded"
+                android:layout_height="@dimen/avatar_size_expanded"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/default_padding_margin"
-                android:transitionName="@string/transition_name"/>
+                android:transitionName="@string/transition_name"
+                tools:ignore="ContentDescription"/>
 
-            <com.example.kuassivi.material_chooseyouravatar.GalleryView
+            <com.example.kuassivi.material_avatar.core.view.GalleryView
                 android:id="@+id/avatar_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
         </FrameLayout>
 
-        <com.example.kuassivi.material_chooseyouravatar.AutofitRecyclerView
+        <!-- Our set of images -->
+        <com.example.kuassivi.material_avatar.core.view.AutofitRecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_0"
@@ -46,6 +51,7 @@
 
     </LinearLayout>
 
+    <!-- The Fab action to apply -->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         style="@style/FabStyle"/>

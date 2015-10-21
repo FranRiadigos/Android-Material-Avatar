@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Kiko Gonzalez
+ * Copyright (C) 2015 Francisco Gonzalez-Armijo Riádigos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.kuassivi.material_chooseyouravatar.adapter;
+package com.example.kuassivi.material_avatar.core.adapter;
 
 import android.os.Handler;
 import android.support.v4.view.ViewCompat;
@@ -23,8 +23,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.kuassivi.material_chooseyouravatar.R;
-import com.example.kuassivi.material_chooseyouravatar.ViewModel;
+import com.example.kuassivi.material_avatar.core.model.ViewModel;
+import com.example.kuassivi.material_avatar.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

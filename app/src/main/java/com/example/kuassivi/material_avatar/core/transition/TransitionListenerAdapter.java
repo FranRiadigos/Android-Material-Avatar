@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Kiko Gonzalez
+ * Copyright (C) 2015 Francisco Gonzalez-Armijo Riádigos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.kuassivi.material_chooseyouravatar.transition;
+package com.example.kuassivi.material_avatar.core.transition;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.transition.Transition;
 
+@TargetApi(Build.VERSION_CODES.KITKAT)
 public class TransitionListenerAdapter implements Transition.TransitionListener {
     @Override
     public void onTransitionStart(Transition transition) {

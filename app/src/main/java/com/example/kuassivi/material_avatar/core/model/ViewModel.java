@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Kiko Gonzalez
+ * Copyright (C) 2015 Francisco Gonzalez-Armijo Riádigos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.kuassivi.material_chooseyouravatar.animation;
+package com.example.kuassivi.material_avatar.core.model;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
+public class ViewModel {
+    private String image;
 
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
-
-public class TargetAdapter implements Target {
-    @Override
-    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+    public ViewModel(String image) {
+        this.image = image;
     }
 
-    @Override
-    public void onBitmapFailed(Drawable errorDrawable) {
-    }
-
-    @Override
-    public void onPrepareLoad(Drawable placeHolderDrawable) {
+    public String getImage() {
+        return image;
     }
 }

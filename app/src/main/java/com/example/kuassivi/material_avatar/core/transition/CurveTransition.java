@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Kiko Gonzalez
+ * Copyright (C) 2015 Francisco Gonzalez-Armijo Riádigos
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.kuassivi.material_chooseyouravatar.transition;
+package com.example.kuassivi.material_avatar.core.transition;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Path;
+import android.os.Build;
 import android.transition.Transition;
 import android.transition.TransitionValues;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class CurveTransition extends Transition {
     private static final String PROPNAME_VIEW_X = "kuassivi:curveTransition:viewX";
     private static final String PROPNAME_VIEW_Y = "kuassivi:curveTransition:viewY";

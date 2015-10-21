@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Motion Avatar Selection</string>
+    <string name="app_name">Material Avatar</string>
 
     <string name="title_activity_profile">My Profile</string>
+    <string name="subtitle_activity_profile">Enhance your projects!</string>
     <string name="title_activity_avatar_selection">Choose your Avatar</string>
 
-    <string name="transition_name">com.outtake.android.avatarmaterialmotion.FAB_AVATAR</string>
+    <string name="transition_name">com.example.kuassivi.xxx.SHARED_AVATAR</string>
 </resources>

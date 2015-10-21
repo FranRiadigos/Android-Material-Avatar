@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.example.kuassivi.material_chooseyouravatar"
+    package="com.example.kuassivi.material_avatar"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".feature.ProfileActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,12 +20,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChooseAvatarActivity"
+            android:name=".feature.ChooseAvatarActivity"
             android:label="@string/title_activity_avatar_selection"
-            android:parentActivityName=".ProfileActivity">
+            android:parentActivityName=".feature.ProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ProfileActivity"/>
+                android:value=".feature.ProfileActivity"/>
         </activity>
     </application>
 
