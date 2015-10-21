@@ -295,9 +295,14 @@ public class ChooseAvatarActivity extends AppCompatActivity
 
                         ScalableBitmapAnimator bitmapAnimator =
                             new ScalableBitmapAnimator(scaleTo, ScalableBitmapAnimator.SCALE_TO);
-                        bitmapAnimator.setScaleFactor(1f).setInterpolator(new DecelerateInterpolator())
-                            .setDuration(duration).setStartDelay(delay);
-                        mAvatarContainer.setBitmapAnimators(bitmapAnimator).startBitmapAnimation();
+                        bitmapAnimator
+                                .setScaleFactor(1f)
+                                .setInterpolator(new DecelerateInterpolator())
+                                .setDuration(duration)
+                                .setStartDelay(delay);
+                        mAvatarContainer
+                                .setBitmapAnimators(bitmapAnimator)
+                                .startBitmapAnimation();
                     }
 
                     new Handler().postDelayed(new Runnable() {
